@@ -52,6 +52,31 @@
   color: #ffffff;
 }
 
+.nav-auth {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-user {
+  color: #4b5563;
+  font-size: 0.9rem;
+}
+
+.nav-logout {
+  border: none;
+  border-radius: 999px;
+  padding: 0.5rem 0.9rem;
+  background: #fee2e2;
+  color: #b91c1c;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.nav-logout:hover {
+  background: #fecaca;
+}
+
 .site-main {
   flex: 1;
   width: 100%;
@@ -138,6 +163,72 @@
   background: #ecfdf3;
   border: 1px solid #a7f3d0;
   color: #166534;
+}
+
+.tasks-subtitle {
+  color: #6b7280;
+  margin-top: -0.5rem;
+}
+
+.task-list {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.task-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  background: #f9fafb;
+}
+
+.task-item.done .task-title {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+.task-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.task-checkbox input {
+  margin-top: 0.3rem;
+}
+
+.task-title {
+  margin: 0;
+  font-weight: 600;
+}
+
+.task-description {
+  margin: 0.25rem 0 0;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.task-delete {
+  border: none;
+  border-radius: 999px;
+  padding: 0.45rem 0.8rem;
+  background: #fee2e2;
+  color: #b91c1c;
+  cursor: pointer;
+  height: fit-content;
+  transition: background-color 0.2s ease;
+}
+
+.task-delete:hover {
+  background: #fecaca;
 }
 
 .site-footer {
