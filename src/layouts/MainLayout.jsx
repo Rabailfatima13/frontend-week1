@@ -1,4 +1,5 @@
 import { NavLink, Outlet } from 'react-router-dom'
+import { useAuth } from '../context/AuthContext'
 
 const navLinks = [
   { to: '/', label: 'Home' },
@@ -7,6 +8,8 @@ const navLinks = [
 ]
 
 function MainLayout() {
+  const { isAuthenticated, user, logout } = useAuth()
+
   return (
     <div className="app-shell">
       <header className="site-header">
@@ -24,6 +27,30 @@ function MainLayout() {
                 {link.label}
               </NavLink>
             ))}
+            {isAuthenticated ? (
+              <NavLink
+                to="/tasks"
+                className={({ isActive }) =>
+                  isActive ? 'nav-link active' : 'nav-link'
+                }
+              >
+                Tasks
+              </NavLink>
+            ) : null}
+          </div>
+          <div className="nav-auth">
+            {isAuthenticated ? (
+              <>
+                <span className="nav-user">{user?.email}</span>
+                <button type="button" className="nav-logout" onClick={logout}>
+                  Log Out
+                </button>
+              </>
+            ) : (
+              <NavLink to="/login" className="nav-link">
+                Log In
+              </NavLink>
+            )}
           </div>
         </nav>
       </header>
